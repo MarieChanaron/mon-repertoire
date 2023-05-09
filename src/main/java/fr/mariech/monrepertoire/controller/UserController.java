@@ -31,6 +31,8 @@ public class UserController {
         boolean userExists = service.checkUser(user);
         if (userExists) {
             request.getSession().setAttribute("login", user.getUserName());
+            int id = service.findUserByUsername(user.getUserName()).getId();
+            request.getSession().setAttribute("id", id);
             return "redirect:/contacts";
         } else {
             request.getSession().setAttribute("login", "bad-credentials");
@@ -53,5 +55,10 @@ public class UserController {
         }
         return "index";
     }
+
+    @GetMapping("/user")
+    public String getContact(Model model, HttpServletRequest request) {
+        return "user-details";
+}
 
 }

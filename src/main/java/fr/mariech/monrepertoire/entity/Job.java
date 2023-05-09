@@ -32,6 +32,11 @@ public class Job {
         this.department = department;
     }
 
+    public Job(String position, String company) {
+        this.jobTitle = position;
+        this.company = company;
+    }
+
     public Integer getId() {
         return id;
     }

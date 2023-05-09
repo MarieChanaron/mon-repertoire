@@ -73,6 +73,10 @@ h1, h2, h3, h4, h5, h6 {
     width: fit-content !important;
 }
 
+.uppercase {
+    text-transform: uppercase;
+}
+
 a {
     color: unset;
 }
@@ -81,12 +85,15 @@ a:hover {
     color: #E21F36;
 }
 
-input {
+input,
+select,
+textarea {
     padding: 4px;
     font-size: 1.4rem !important;
 }
 
-input:not([type="submit"]) {
+input:not([type="submit"]),
+select.form-select {
     border-width: 0px 0px 1px 0px;
     border-style: solid;
     border-color: #8D8AB2;

@@ -37,14 +37,6 @@
   <div class="container my-5">
     <div class="row">
       <div class="col">
-
-      </div>
-    </div>
-  </div>
-
-  <div class="container my-5">
-    <div class="row">
-      <div class="col">
         <table class="table">
           <thead>
           <tr>
@@ -59,8 +51,8 @@
           <tbody>
           <tr th:each="contact: ${contacts}">
             <td th:text="${contact.title}"></td>
-            <td th:text="${contact.lastname}"></td>
-            <td th:text="${contact.firstname}"></td>
+            <td th:text="${contact.lastName}" class="uppercase" ></td>
+            <td th:text="${contact.firstName}"></td>
             <td th:text="${contact.job.jobTitle}"></td>
             <td th:text="${contact.job.company}"></td>
             <td>

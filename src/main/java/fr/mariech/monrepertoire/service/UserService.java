@@ -30,4 +30,8 @@ public class UserService {
         boolean exists = repository.exists(valuesToCheck);
         return exists;
     }
+
+    public User findUserByUsername(String username) {
+        return repository.findByUsername(username);
+    }
 }

@@ -18,7 +18,7 @@ public class Contact {
     @Column(name = "title")
     private String title;
 
-    @Column(name = "firtname")
+    @Column(name = "firstname")
     private String firstName;
 
     @Column(name = "lastname")
@@ -72,6 +72,12 @@ public class Contact {
     public Contact() {
     }
 
+    public Contact(int idContact, String title, String firstname, String lastname) {
+        this.id = idContact;
+        this.title = title;
+        this.firstName = firstname;
+        this.lastName = lastname;
+    }
 
 
     public int getId() {
@@ -192,5 +198,26 @@ public class Contact {
 
     public void setAddresses(List<Address> addresses) {
         this.addresses = addresses;
+    }
+
+    @Override
+    public String toString() {
+        return "Contact{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", nickname='" + nickname + '\'' +
+                ", image='" + image + '\'' +
+                ", birthday=" + birthday +
+                ", website='" + website + '\'' +
+                ", customField='" + customField + '\'' +
+                ", firstMeeting='" + firstMeeting + '\'' +
+                ", phone=" + phone +
+                ", job=" + job +
+                ", email=" + email +
+                ", user=" + user +
+                ", addresses=" + addresses +
+                '}';
     }
 }
