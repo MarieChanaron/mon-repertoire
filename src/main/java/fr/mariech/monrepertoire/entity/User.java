@@ -50,24 +50,17 @@ public class User {
         this.password = password;
     }
 
-    public User(String firstName, String lastName, String userName, String email, String mobilePhone, String password, String confirmation) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.userName = userName;
-        this.email = email;
-        this.mobilePhone = mobilePhone;
-        this.password = password;
-        this.confirmation = confirmation;
-    }
-
-    public User(int id, String firstName, String lastName, String userName, String email, String mobilePhone, String password) {
+    public User(int id, String firstName, String lastName, String userName, String image, String email, String mobilePhone, String password, String confirmation, List<Contact> contactList) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
+        this.image = image;
         this.email = email;
         this.mobilePhone = mobilePhone;
         this.password = password;
+        this.confirmation = confirmation;
+        this.contactList = contactList;
     }
 
     public int getId() {

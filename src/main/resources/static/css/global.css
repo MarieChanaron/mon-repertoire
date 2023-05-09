@@ -44,10 +44,37 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: unset;
 }
 
+.button-secondary {
+    color: #dc3c4f;
+    background-color: transparent;
+    border-radius: 8px;
+    padding: 4px 16px;
+    border: 1px solid #dc3c4f;
+    font-weight: unset;
+    transition: 0.2s;
+}
+
+.button-secondary:hover {
+    color: white;
+    background-color: #dc3c4f;
+    border-radius: 8px;
+    padding: 4px 16px;
+    border: 1px solid #dc3c4f;
+    font-weight: unset;
+}
+
 .block-center {
     display: block;
     margin: auto;
     width: max-content;
+}
+
+.fit-content {
+    width: fit-content !important;
+}
+
+a {
+    color: unset;
 }
 
 a:hover {

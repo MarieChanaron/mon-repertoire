@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
 
 <body th:fragment="header">
 
@@ -7,10 +7,23 @@
 
     <div class="container">
         <div class="container-fluid">
-            <a class="navbar-brand d-flex align-items-center" href="index">
-                <img src="/images/flat-color-icons_contacts.svg" alt="Logo" class="d-inline-block align-text-top my-auto me-2">
-                <span id="website-name">Mon Répertoire</span>
-            </a>
+            <div class="row">
+                <div class="col d-flex align-items-center">
+                    <a class="navbar-brand d-flex align-items-center" href="index">
+                        <img src="/images/flat-color-icons_contacts.svg" alt="Logo" class="d-inline-block align-text-top my-auto me-2">
+                        <span id="website-name">Mon Répertoire</span>
+                    </a>
+                    <div th:if="${session.login != null}" class="ms-auto">
+                        <a href="logout">Se déconnecter</a>
+                        <img src="/images/carbon_user-avatar-filled.svg" alt="avatar" class="ms-2">
+                    </div>
+                    <div th:if="${session.login == null && session.login != 'bad-credentials'}" class="ms-auto">
+                        <a href="login">
+                            <button class="button-secondary">Se connecter</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
