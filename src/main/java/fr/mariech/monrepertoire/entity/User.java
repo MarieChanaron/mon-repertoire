@@ -2,6 +2,8 @@ package fr.mariech.monrepertoire.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "user")
 public class User {
@@ -28,6 +30,9 @@ public class User {
 
     @Column(name = "password")
     private String password;
+
+    @OneToMany(mappedBy = "user")
+    private List<Contact> contactList;
 
     //Constructeurs, getters, setters
 
@@ -103,5 +108,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public List<Contact> getContactList() {
+        return contactList;
+    }
+
+    public void setContactList(List<Contact> contactList) {
+        this.contactList = contactList;
     }
 }
