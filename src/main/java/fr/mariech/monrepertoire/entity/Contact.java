@@ -27,6 +27,9 @@ public class Contact {
     @Column(name = "nickname")
     private String nickname;
 
+    @Column(name = "image")
+    private String image;
+
     @Temporal(TemporalType.DATE)
     @Column(name = "birthday")
     private Date birthday;
