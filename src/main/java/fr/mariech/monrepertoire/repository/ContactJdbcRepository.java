@@ -33,30 +33,6 @@ public class ContactJdbcRepository {
         }
     }
 
-    /*
-    public List<Contact> fetchByUser(User user) {
-        List<Contact> contacts = new ArrayList<>();
-        String sqlQuery = "SELECT * FROM `db-repertoire`.contact WHERE user = ?;";
-        ContactMapper contactMapper = new ContactMapper();
-        contacts = this.jdbcTemplate.query(sqlQuery, contactMapper, user.getId());
-        return contacts;
-    }
-     */
-
-    /*
-    public List<Contact> fetchByUser(User user) {
-        String sqlQuery = "SELECT id_contact, title, firstname, lastname FROM `db-repertoire`.contact WHERE user = 7";
-        Stream<Contact> stream = jdbcTemplate.queryForStream(sqlQuery, (rs, rowNum) ->
-                new Contact(
-                    rs.getInt("id_contact"),
-                    rs.getString("title"),
-                    rs.getString("firstname"),
-                    rs.getString("lastname")
-                ));
-        return stream.collect(Collectors.toList());
-    }
-     */
-
     public List<Contact> fetchByUser(User user) {
         String sqlQuery = "SELECT id_contact, title, firstname, lastname FROM `db-repertoire`.contact WHERE user = ?";
         List<Contact> contacts = new ArrayList<>();
