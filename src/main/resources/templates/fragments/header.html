@@ -17,12 +17,12 @@
                         <img src="/images/flat-color-icons_contacts.svg" alt="Logo" class="d-inline-block align-text-top my-auto me-2">
                         <span class="website-name">Mon Répertoire</span>
                     </a>
-                    <div th:if="${session.login != null}" class="ms-auto">
+                    <div th:if="${session.id != null}" class="ms-auto">
                         <a href="contacts">Contacts</a>
                         <a href="logout" class="ms-3">Se déconnecter</a>
                         <a href="user-details"><img src="/images/carbon_user-avatar-filled.svg" alt="avatar" class="ms-3"></a>
                     </div>
-                    <div th:if="${session.login == null && session.login != 'bad-credentials'}" class="ms-auto">
+                    <div th:if="${session.id == null}" class="ms-auto">
                         <a href="login">
                             <button class="button-secondary">Se connecter</button>
                         </a>
