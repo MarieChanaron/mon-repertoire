@@ -39,7 +39,7 @@ h1, h2, h3, h4, h5, h6 {
     color: white;
     background-color: #3F3D56;
     border-radius: 8px;
-    padding: 8px 24px;
+    padding: 4px 16px;
     border: none;
     font-weight: unset;
 }

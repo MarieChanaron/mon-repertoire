@@ -9,9 +9,13 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col d-flex align-items-center">
-                    <a class="navbar-brand d-flex align-items-center" href="index">
+                    <a th:if="${session.login != null && session.login != 'bad-credentials'}" class="navbar-brand d-flex align-items-center" href="contacts">
                         <img src="/images/flat-color-icons_contacts.svg" alt="Logo" class="d-inline-block align-text-top my-auto me-2">
-                        <span id="website-name">Mon Répertoire</span>
+                        <span class="website-name">Mon Répertoire</span>
+                    </a>
+                    <a th:if="${session.login == null || session.login == 'bad-credentials'}" class="navbar-brand d-flex align-items-center" href="index">
+                        <img src="/images/flat-color-icons_contacts.svg" alt="Logo" class="d-inline-block align-text-top my-auto me-2">
+                        <span class="website-name">Mon Répertoire</span>
                     </a>
                     <div th:if="${session.login != null}" class="ms-auto">
                         <a href="logout">Se déconnecter</a>
