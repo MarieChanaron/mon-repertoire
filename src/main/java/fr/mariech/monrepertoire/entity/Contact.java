@@ -114,6 +114,14 @@ public class Contact {
         this.nickname = nickname;
     }
 
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
     public Date getBirthday() {
         return birthday;
     }

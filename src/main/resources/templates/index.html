@@ -24,7 +24,7 @@
         <div class="row">
             <div class="col">
                 <h3 class="ps-4">Bonjour ! Bienvenue dans</h3>
-                <h2 class="red ps-4">Mon Répertoire</h2>
+                <h2 class="secondary-color ps-4">Mon Répertoire</h2>
             </div>
         </div>
     </div>
@@ -42,28 +42,29 @@
     <div class="container my-5">
         <div class="row">
             <div class="mx-auto">
-                <form autocomplete="off">
+                <form autocomplete="off" action="#" th:action="@{add-user}" th:object="${user}" method="post">
                     <div class="mb-4">
-                        <input type="text" class="form-control" id="firstname" placeholder="Prénom">
+                        <input type="text" class="form-control" id="firstname" placeholder="Prénom" name="" th:field="*{firstName}">
                     </div>
                     <div class="mb-4">
-                        <input type="text" class="form-control" id="lastname" placeholder="Nom">
+                        <input type="text" class="form-control" id="lastname" placeholder="Nom" name="" th:field="*{lastName}">
                     </div>
                     <div class="mb-4">
-                        <input type="text" class="form-control" id="username" placeholder="Nom d'utilisateur" autocomplete="new-password">
+                        <input type="text" class="form-control" id="username" placeholder="Nom d'utilisateur" autocomplete="new-password" name="" th:field="*{userName}">
                     </div>
                     <div class="mb-4">
-                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Adresse e-mail">
+                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Adresse e-mail" name="" th:field="*{email}">
                     </div>
                     <div class="mb-4">
-                        <input type="tel" class="form-control" id="phone" placeholder="Téléphone mobile">
+                        <input type="tel" class="form-control" id="phone" placeholder="Téléphone mobile" name="" th:field="*{mobilePhone}">
                     </div>
                     <div class="mb-4">
-                        <input type="password" class="form-control" id="password" placeholder="Mot de passe" autocomplete="new-password">
+                        <input type="password" class="form-control" id="password" placeholder="Mot de passe" autocomplete="new-password" name="" th:field="*{password}">
                     </div>
-                    <!--div class="mb-4">
-                        <input type="password" class="form-control" id="password-confirmation" placeholder="Confirmer le mot de passe">
-                    </div-->
+                    <div class="mb-4">
+                        <input type="password" class="form-control" id="password-confirmation" placeholder="Confirmer le mot de passe" name="" th:field="*{confirmation}">
+                    </div>
+                    <p th:if="${validate == false}" class="secondary-color fst-italic">Le mot de passe ne correspond pas avec la confirmation de mot de passe.</p>
                     <button type="submit" class="button block-center my-5">S'inscrire</button>
                 </form>
             </div>
@@ -75,7 +76,7 @@
             <div class="col">
                 <p class="text-center fw-500">
                     <span>Utilisateur existant ?</span>
-                    <a href="login" class="red underline-none">Se connecter</a>
+                    <a href="login" class="secondary-color underline-none">Se connecter</a>
                 </p>
             </div>
         </div>

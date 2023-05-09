@@ -34,6 +34,9 @@ public class User {
     @Column(name = "password")
     private String password;
 
+    @Transient
+    private String confirmation;
+
     @OneToMany(mappedBy = "user")
     private List<Contact> contactList;
 
@@ -45,6 +48,16 @@ public class User {
     public User(String userName, String password) {
         this.userName = userName;
         this.password = password;
+    }
+
+    public User(String firstName, String lastName, String userName, String email, String mobilePhone, String password, String confirmation) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.userName = userName;
+        this.email = email;
+        this.mobilePhone = mobilePhone;
+        this.password = password;
+        this.confirmation = confirmation;
     }
 
     public User(int id, String firstName, String lastName, String userName, String email, String mobilePhone, String password) {
@@ -89,6 +102,14 @@ public class User {
         this.userName = userName;
     }
 
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -113,11 +134,35 @@ public class User {
         this.password = password;
     }
 
+    public String getConfirmation() {
+        return confirmation;
+    }
+
+    public void setConfirmation(String confirmation) {
+        this.confirmation = confirmation;
+    }
+
     public List<Contact> getContactList() {
         return contactList;
     }
 
     public void setContactList(List<Contact> contactList) {
         this.contactList = contactList;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", userName='" + userName + '\'' +
+                ", image='" + image + '\'' +
+                ", email='" + email + '\'' +
+                ", mobilePhone='" + mobilePhone + '\'' +
+                ", password='" + password + '\'' +
+                ", confirmation='" + confirmation + '\'' +
+                ", contactList=" + contactList +
+                '}';
     }
 }
