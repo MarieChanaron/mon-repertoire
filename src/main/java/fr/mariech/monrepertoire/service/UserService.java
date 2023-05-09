@@ -7,6 +7,8 @@ import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 import static org.springframework.data.domain.ExampleMatcher.GenericPropertyMatchers.caseSensitive;
 import static org.springframework.data.domain.ExampleMatcher.GenericPropertyMatchers.ignoreCase;
 
@@ -33,5 +35,13 @@ public class UserService {
 
     public User findUserByUsername(String username) {
         return repository.findByUsername(username);
+    }
+
+    public Optional<User> fetchUser(int id) {
+        return repository.findById(id);
+    }
+
+    public void deleteUser(Integer id) {
+        repository.deleteById(id);
     }
 }

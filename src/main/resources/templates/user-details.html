@@ -33,12 +33,12 @@
     <div class="row align-items-center">
       <div class="col-2">
         <span class="circle-image">
-          <img src="/images/profile-picture.jpg" alt="photo de profil">
+          <img src="" th:src="@{'/images/' + ${user.image}}" alt="photo de profil">
         </span>
       </div>
       <div class="col-10">
-        <p class="fw-600">Marie Chanaron</p>
-        <p>06 65 52 27 91</p>
+        <p class="fw-600"><span th:text="${user.firstName}"></span> <span th:text="${user.lastName}"></span></p>
+        <p th:text="${user.mobilePhone}"></p>
       </div>
     </div>
   </div>
@@ -51,13 +51,13 @@
     </div>
     <dl class="row">
       <dt class="col-2">Nom complet :</dt>
-      <dd class="col-10">Marie Chanaron</dd>
+      <dd class="col-10"><span th:text="${user.firstName}"></span> <span th:text="${user.lastName}"></span></dd>
       <dt class="col-2">Nom d'utilisateur :</dt>
-      <dd class="col-10">Malouette</dd>
+      <dd class="col-10" th:text="${user.userName}"></dd>
       <dt class="col-2">Numéro de téléphone :</dt>
-      <dd class="col-10">06 65 52 27 91</dd>
+      <dd class="col-10" th:text="${user.mobilePhone}"></dd>
       <dt class="col-2">Adresse e-mail :</dt>
-      <dd class="col-10">chanaronmarie@gmail.com</dd>
+      <dd class="col-10" th:text="${user.email}"></dd>
       <dt class="col-2">Mot de passe :</dt>
       <dd class="col-10">*********</dd>
     </dl>
@@ -66,9 +66,14 @@
   <div class="container my-5">
     <div class="row">
       <div class="col">
-          <a href="">
+          <a href="edit-user">
             <button class="button">Editer</button>
           </a>
+      </div>
+      <div class="col d-flex">
+        <a href="delete-user" class="ms-auto">
+          <button class="button-outline">Supprimer mon compte</button>
+        </a>
       </div>
     </div>
   </div>
