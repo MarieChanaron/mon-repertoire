@@ -49,6 +49,9 @@ public class UserController {
     @PostMapping("/add-user")
     public String addUser(@ModelAttribute User user, Model model) {
         if (user.getPassword().equals(user.getConfirmation())) {
+            if (user.getImage() == null) {
+                user.setImage("profile-picture.jpg");
+            }
             service.saveUser(user);
         } else {
             model.addAttribute("validate", false);
@@ -56,9 +59,9 @@ public class UserController {
         return "index";
     }
 
-    @GetMapping("/user")
+    @GetMapping("/user-details")
     public String getContact(Model model, HttpServletRequest request) {
         return "user-details";
-}
+    }
 
 }

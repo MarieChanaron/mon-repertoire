@@ -1,20 +1,3 @@
-.circle-image{
-    display: block;
-    margin: auto;
-    overflow: hidden;
-    width: 130px;
-    padding-bottom: 130px;
-    height: 0;
-    position: relative;
-}
-.circle-image img{
-    width:100%;
-    height:100%;
-    position: absolute;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
 form {
     max-width: 500px;
     margin: auto;

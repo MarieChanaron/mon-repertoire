@@ -19,7 +19,7 @@
                     </a>
                     <div th:if="${session.login != null}" class="ms-auto">
                         <a href="logout">Se déconnecter</a>
-                        <img src="/images/carbon_user-avatar-filled.svg" alt="avatar" class="ms-2">
+                        <a href="user-details"><img src="/images/carbon_user-avatar-filled.svg" alt="avatar" class="ms-2"></a>
                     </div>
                     <div th:if="${session.login == null && session.login != 'bad-credentials'}" class="ms-auto">
                         <a href="login">
